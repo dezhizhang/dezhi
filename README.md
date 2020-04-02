@@ -1,11 +1,4 @@
-# dezhi
-
-
-
-## QuickStart
-
-<!-- add docs here for user -->
-
+### 个人博客
 see [egg docs][egg] for more detail.
 
 ### Development
