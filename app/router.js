@@ -11,4 +11,5 @@ module.exports = app => {
   router.get('/server',controller.default.server.index);
   router.get('/mobile',controller.default.mobile.index);
   router.get('/about',controller.default.about.index);
+  router.get('/small',controller.default.small.index);
 };
