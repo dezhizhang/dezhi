@@ -6,4 +6,5 @@
 module.exports = app => {
   const { router, controller } = app;
   router.get('/', controller.default.home.index);
+  router.get('/front',controller.default.front.index)
 };
