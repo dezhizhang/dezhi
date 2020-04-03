@@ -10,4 +10,5 @@ module.exports = app => {
   router.get('/client',controller.default.client.index);
   router.get('/server',controller.default.server.index);
   router.get('/mobile',controller.default.mobile.index);
+  router.get('/about',controller.default.about.index);
 };
