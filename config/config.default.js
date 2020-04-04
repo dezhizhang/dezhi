@@ -25,6 +25,21 @@ module.exports = appInfo => {
     },
   };
 
+  //配置数据库
+  config.mongoose = {
+    client:{
+      url:'mongodb://127.0.0.1:27017/dezhi',
+      options:{}
+    }
+  }
+
+  //关闭csrf
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
