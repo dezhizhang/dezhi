@@ -7,7 +7,10 @@ const pump = require('mz-modules/pump');
 const Controller = require('egg').Controller;
 class FocusController extends Controller {
     async index() {
-        await this.ctx.render('/admin/focus/index');
+        let list = await this.ctx.model.Focus.find();
+        await this.ctx.render('/admin/focus/index',{
+            list
+        });
     }
     async add() {
         await this.ctx.render('/admin/focus/add');
