@@ -11,18 +11,30 @@ class DetailController extends Controller {
         });
     }
     async add() {
-        let article_id = this.ctx.query.id;
+        let article_id = this.ctx.query.article_id;
         await this.ctx.render('/admin/detail/add',{
             article_id
         });
     }
     async doAdd() {
         let data = this.ctx.request.body;
-        console.log(data);
-        
-
-        
-
+        let article_id = data.article_id;
+        let result = await this.ctx.model.Detail.find({'article_id':article_id});
+        if(result.length > 0) {
+            this.ctx.body = {
+                code:400,
+                msg:"你以增加了一条",
+                data:null
+            }
+            return
+        }
+        let detail =new this.ctx.model.Detail(data);
+        await detail.save();
+        this.ctx.body = {
+            code:200,
+            msg:"增加文章成功",
+            data:null
+        }
     }
     async upload() {
         let parts = this.ctx.multipart({ autoFields: true });
