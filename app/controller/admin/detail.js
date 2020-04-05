@@ -4,10 +4,20 @@ const pump = require('mz-modules/pump');
 const BaseController = require('./base');
 class DetailController extends BaseController {
     async index() {
-        let article_id = this.ctx.query.id;
-        await this.ctx.render('/admin/detail/index',{
-            article_id,
-        });
+        let article_id = this.ctx.query.article_id;
+        let data = await this.ctx.model.Detail.find({"article_id":article_id});
+        if(data.length > 0) {
+            await this.ctx.render('/admin/detail/index',{
+                article_id,
+                list:data
+            });
+        } else {
+            await this.ctx.render('/admin/detail/index',{
+                article_id,
+                list:[{content:""}]
+            });
+        }
+       
     }
     async add() {
         let article_id = this.ctx.query.article_id;
@@ -24,7 +34,10 @@ class DetailController extends BaseController {
             return
         }
         let detail =new this.ctx.model.Detail(data);
+        
         await detail.save();
+        console.log('1');
+
         await this.success(`/admin/detail?article_id=${article_id}`,'增加文章详情成功');
     }
     async upload() {
