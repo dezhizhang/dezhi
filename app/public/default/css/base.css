@@ -62,7 +62,7 @@ nav { float: left; height: 50px; line-height: 50px; text-align: center; }
 /*lbox*/
 .lbox { width: 75%; float: left; overflow: hidden }
 /*banner*/
-.banbox { width: 68.5%; overflow: hidden; float: left; border-radius: 3px; margin-bottom: 20px }
+.banbox { width: 100%; overflow: hidden; float: left; border-radius: 3px; margin-bottom: 20px }
 .banner { width: 100%; overflow: hidden; float: left; }
 .fader { position: relative; width: 100%; height: 260px; /*padding-top: 50%;*/ font-family: "futura", arial; overflow: hidden; }
 .fader .slide { position: absolute; width: 100%; top: 0; z-index: 1; opacity: 0; }
