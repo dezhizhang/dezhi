@@ -29,6 +29,7 @@ module.exports = app => {
   //赞助管理
   router.get('/admin/article',controller.admin.article.index);
   router.get('/admin/article/add',controller.admin.article.add);
+  router.post('/admin/article/doAdd',controller.admin.article.doAdd);
 
 
 
