@@ -22,9 +22,10 @@ module.exports = app => {
   router.get('/admin/classify',controller.admin.classify.index);
     router.get('/admin/classify/add',controller.admin.classify.add);
   
-    //图片管理
-    router.get('/admin/picture',controller.admin.picture.index);
-    router.get('/admin/picture/add',controller.admin.picture.add);
+  //图片管理
+  router.get('/admin/focus',controller.admin.focus.index);
+  router.get('/admin/focus/add',controller.admin.focus.add);
+  router.post('/admin/focus/doAdd',controller.admin.focus.doAdd);
   
     //反馈管理
     router.get('/admin/feedback',controller.admin.feedback.index);

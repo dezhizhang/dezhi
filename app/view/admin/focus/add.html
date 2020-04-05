@@ -8,7 +8,7 @@
 		<div class="row d-flex align-items-center">
 			<div class="col-md-6">
 				<div class="page-breadcrumb">
-					<h1>图片管理</h1>
+					<h1>轮播图管理</h1>
 				</div>
 			</div>
 			<div class="col-md-6 justify-content-md-end d-md-flex">
@@ -16,11 +16,11 @@
 					<ol class="breadcrumb">
 						<li>
 							<i class="fa fa-home"></i>
-							<a class="parent-item" href="/admin/manager">图片管理</a>
+							<a class="parent-item" href="/admin/manager">轮播图管理</a>
 							<i class="fa fa-angle-right"></i>
 						</li>
 						<li class="active">
-							增加图片
+							增加轮播图
 						</li>
 					</ol>
 				</div>
@@ -36,26 +36,22 @@
 			<div class="card card-shadow mb-4">
 				<div class="card-header">
 					<div class="card-title">
-						增加管理员
+						增加轮播图
 					</div>
 				</div>
 				<div class="card-body">
-					<form>
+					<form  method="POST" action="/admin/focus/doAdd"  enctype="multipart/form-data">
 						<div class="form-group">
-							<label for="exampleInputEmail1">用户名</label>
-							<input type="email" class="form-control"  placeholder="请输入用户名">
+							<label for="exampleInputPassword1">名称</label>
+							<input name="name" type="text" class="form-control"  placeholder="请输入名称">
 						</div>
 						<div class="form-group">
-							<label for="exampleFormControlFile1">头像</label>
-							<input type="file" class="form-control-file" >
+							<label for="exampleFormControlFile1">轮播图</label>
+							<input name="img" type="file" class="form-control-file" >
 						</div>
 						<div class="form-group">
-							<label for="exampleInputPassword1">密码</label>
-							<input type="password" class="form-control"  placeholder="请输入密码">
-						</div>
-						<div class="form-group">
-							<label for="exampleFormControlInput1">邮箱</label>
-							<input type="email" class="form-control"  placeholder="请输入邮箱">
+							<label for="exampleInputPassword1">地址</label>
+							<input type="text" name="url" class="form-control"  placeholder="请输入地址">
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlTextarea1">描述</label>
