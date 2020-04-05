@@ -33,7 +33,7 @@
         <%for(let i=0;i < article.length;i++) {%>
           <li>
             <h3 class="blogtitle"><a href="/" target="_blank"><%=article[i].name%></a></h3>
-            <span class="blogpic imgscale"><i><a href="/">原创模板</a></i><a href="/" title=""><img src="images/b01.jpg" alt=""></a></span>
+            <span class="blogpic imgscale"><img src="<%=article[i].img%>" alt=""></span>
             <p class="blogtext"><%=article[i].description%> </p>
             <p class="bloginfo"><i class="avatar"><img src="/public/default/images/avatar.png"></i><span>晓智</span><span>2018-10-28</span><span></span></p>
             <a href="/detail" class="viewmore">阅读更多</a> 
