@@ -16,6 +16,14 @@ class DetailController extends Controller {
             article_id
         });
     }
+    async doAdd() {
+        let data = this.ctx.request.body;
+        console.log(data);
+        
+
+        
+
+    }
     async upload() {
         let parts = this.ctx.multipart({ autoFields: true });
         let files = {};               

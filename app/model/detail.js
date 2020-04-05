@@ -3,6 +3,7 @@ module.exports = app => {
     const Schema = mongoose.Schema;
     const d = new Date();
     const DetailSchema = new Schema({
+        img:{ type:String },
         content:{ type:String },
         add_time:{
             type:Number,

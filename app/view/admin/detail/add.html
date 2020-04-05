@@ -40,7 +40,8 @@
 					</div>
 				</div>
 				<div class="card-body">
-					<form>
+                    <form method="POST" action="/admin/detail/doAdd">
+                        <input type="hidden" name="article_id" value="<%=article_id%>"/>
 						<textarea id="summernote" name="content"></textarea>
 						<button type="submit" class="btn btn-primary">
 							确 定
