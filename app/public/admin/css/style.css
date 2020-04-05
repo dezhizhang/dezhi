@@ -4719,6 +4719,7 @@ body:not(.nav_small) .nav.nav-pills.nav-stacked.labels-info p{
 }
 }
 
+
 @media (max-width:991px) {
 	.dt-bootstrap4{
 		    overflow-x: scroll;
