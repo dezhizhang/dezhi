@@ -6,24 +6,15 @@ const Controller = require('egg').Controller;
 
 class ManagerController extends Controller {
     async index() {
-        await this.ctx.render('/admin/manager/index')
+        let list = await this.ctx.model.Admin.find();
+        await this.ctx.render('/admin/manager/index',{
+            list
+        })
     }
     async add() {
         await this.ctx.render('/admin/manager/add');
     }
-    //    //增加管理员
-    //    async doAdd() {
-    //     let result = this.ctx.request.body;
-    //     result.password = 
-    //     let adminResult = await this.ctx.model.Admin.find({'username':result.username});
-    //     if(adminResult.length > 0) {
-    //         await this.error('/admin/manager','当前管理员以存在');
-    //     } else {
-    //         let manager = new this.ctx.model.Admin(result);
-    //         await manager.save();
-    //         await this.success('/admin/manager','增加管理员成功');
-    //     }
-    // }
+    //增加管理员
     async doAdd() {
         let parts = this.ctx.multipart({ autoFields: true });
         let files = {};               
