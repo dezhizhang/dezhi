@@ -45,7 +45,7 @@ module.exports = app => {
   router.get('/mobile',controller.default.mobile.index);
   //关于
   router.get('/about',controller.default.about.index);
-  router.get('/small',controller.default.small.index);
+  router.get('/linux',controller.default.linux.index);
   //详情
   router.get('/detail',controller.default.detail.index);
 };
