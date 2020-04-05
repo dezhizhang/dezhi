@@ -18,26 +18,17 @@ module.exports = app => {
   router.get('/admin/user/add',controller.admin.user.add);
   router.get('/admin/user',controller.admin.user.index);
   
-    //分类管理
-  router.get('/admin/classify',controller.admin.classify.index);
-    router.get('/admin/classify/add',controller.admin.classify.add);
+
   
   //图片管理
   router.get('/admin/focus',controller.admin.focus.index);
   router.get('/admin/focus/add',controller.admin.focus.add);
   router.post('/admin/focus/doAdd',controller.admin.focus.doAdd);
   
-    //反馈管理
-    router.get('/admin/feedback',controller.admin.feedback.index);
-  
-  
-    //活动管理
-    router.get('/admin/activity',controller.admin.activity.index);
-    router.get('/admin/activity/add',controller.admin.activity.add);
-  
-    //赞助管理
-    router.get('/admin/sponsor',controller.admin.sponsor.index);
-    router.get('/admin/sponsor/add',controller.admin.sponsor.add);
+
+  //赞助管理
+  router.get('/admin/article',controller.admin.article.index);
+  router.get('/admin/article/add',controller.admin.article.add);
 
 
 
