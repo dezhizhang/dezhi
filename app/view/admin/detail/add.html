@@ -8,7 +8,7 @@
 		<div class="row d-flex align-items-center">
 			<div class="col-md-6">
 				<div class="page-breadcrumb">
-					<h1>分类管理</h1>
+					<h1>文章详情</h1>
 				</div>
 			</div>
 			<div class="col-md-6 justify-content-md-end d-md-flex">
@@ -16,11 +16,11 @@
 					<ol class="breadcrumb">
 						<li>
 							<i class="fa fa-home"></i>
-							<a class="parent-item" href="/admin/manager">分类管理</a>
+							<a class="parent-item" href="/admin/detail">文章详情</a>
 							<i class="fa fa-angle-right"></i>
 						</li>
 						<li class="active">
-							增加分类
+							增加详情
 						</li>
 					</ol>
 				</div>
@@ -36,31 +36,12 @@
 			<div class="card card-shadow mb-4">
 				<div class="card-header">
 					<div class="card-title">
-						增加管理员
+						增加文章详情
 					</div>
 				</div>
 				<div class="card-body">
 					<form>
-						<div class="form-group">
-							<label for="exampleInputEmail1">用户名</label>
-							<input type="email" class="form-control"  placeholder="请输入用户名">
-						</div>
-						<div class="form-group">
-							<label for="exampleFormControlFile1">头像</label>
-							<input type="file" class="form-control-file" >
-						</div>
-						<div class="form-group">
-							<label for="exampleInputPassword1">密码</label>
-							<input type="password" class="form-control"  placeholder="请输入密码">
-						</div>
-						<div class="form-group">
-							<label for="exampleFormControlInput1">邮箱</label>
-							<input type="email" class="form-control"  placeholder="请输入邮箱">
-						</div>
-						<div class="form-group">
-							<label for="exampleFormControlTextarea1">描述</label>
-							<textarea class="form-control"  rows="3"></textarea>
-						</div>
+						<textarea id="summernote" name="content"></textarea>
 						<button type="submit" class="btn btn-primary">
 							确 定
 						</button>
@@ -90,4 +71,48 @@
 <script type="text/javascript" src="/public/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="/public/admin/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="/public/admin/js/custom.js" type="text/javascript"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#summernote').summernote({
+        lang : 'zh-CN',// 语言
+        height : 496, // 高度
+        minHeight : 300, // 最小高度
+        placeholder : '请输入文章内容', // 提示       
+        // summernote自定义配置
+        toolbar: [
+            ['operate', ['undo','redo']],
+            ['magic',['style']],
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['para', ['height','fontsize','ul', 'ol', 'paragraph']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['color', ['color']],
+            ['insert',['picture','video','link','table','hr']],
+            ['layout',['fullscreen','codeview']],
+        ],
+        callbacks : { // 回调函数
+                // 上传图片时使用的回调函数   因为我们input选择的本地图片是二进制图片，需要把二进制图片上传服务器，服务器再返回图片url，就需要用到callback这个回调函数
+                onImageUpload : function(files) { 
+                    let form=new FormData();
+                    form.append('img',files[0])  //myFileName 是上传的参数名，一定不能写错
+                    $.ajax({
+                        type:"post",
+                        url:"/admin/detail/upload", //上传服务器地址
+                        dataType:'json',
+                        data:form,
+                        processData : false,
+                           contentType : false,
+                           cache : false,
+                           success:function(data){
+                            console.log(data.data)                            
+                              $('#summernote').summernote('editor.insertImage',data.data);
+                           }
+                    })
+                }
+            }
+    });
+});
+</script>
+
 </html>
