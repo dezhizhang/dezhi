@@ -4719,9 +4719,6 @@ body:not(.nav_small) .nav.nav-pills.nav-stacked.labels-info p{
 }
 }
 
-
-
-
 @media (max-width:991px) {
 	.dt-bootstrap4{
 		    overflow-x: scroll;
@@ -4731,7 +4728,7 @@ body:not(.nav_small) .nav.nav-pills.nav-stacked.labels-info p{
 	}
 }
 .side_bar .mCSB_inside > .mCSB_container {
-   * margin-right: 5px;
+   margin-right: 5px;
 }
 #doughnut div{
 	width:100% !important;

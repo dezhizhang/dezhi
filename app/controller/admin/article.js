@@ -6,7 +6,10 @@ const Controller = require('egg').Controller;
 
 class ArticleController extends Controller {
     async index() {
-        await this.ctx.render('/admin/article/index');
+        let list = await this.ctx.model.Article.find();
+        await this.ctx.render('/admin/article/index',{
+            list
+        });
     }
     async add() {
         await this.ctx.render('/admin/article/add');
