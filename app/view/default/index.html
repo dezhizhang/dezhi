@@ -6,8 +6,9 @@
     <div class="banbox">
       <div class="banner">
         <div id="banner" class="fader">
-          
-          <li class="slide" ><a href="" target="_blank"><img src=""></a></li>
+          <%for(let i=0;i < focus.length;i++) {%>
+            <li class="slide" ><a href="<%=focus[i].url%>" target="_blank"><img src="<%=focus[i].img%>"></a></li>
+          <%}%>
           <div class="fader_controls">
             <div class="page prev" data-target="prev"></div>
             <div class="page next" data-target="next"></div>
