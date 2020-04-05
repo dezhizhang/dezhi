@@ -26,10 +26,14 @@ module.exports = app => {
   router.post('/admin/focus/doAdd',controller.admin.focus.doAdd);
   
 
-  //赞助管理
+  //文章管理
   router.get('/admin/article',controller.admin.article.index);
   router.get('/admin/article/add',controller.admin.article.add);
   router.post('/admin/article/doAdd',controller.admin.article.doAdd);
+
+  //文章详情
+  router.get('/admin/detail',controller.admin.detail.index);
+  router.get('/admin/detail/add',controller.admin.detail.add);
 
 
 
