@@ -4,7 +4,10 @@ const Controller = require('egg').Controller;
 
 class ClientController extends Controller {
   async index() {
-    await this.ctx.render("/default/client");
+    let list = await this.ctx.model.Article.find({'classify':'1'});
+    await this.ctx.render("/default/client",{
+      list
+    });
   }
 }
 

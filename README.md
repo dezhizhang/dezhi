@@ -1,7 +1,7 @@
 ### 个人博客
-see [egg docs][egg] for more detail.
 
-### Development
+
+
 
 ```bash
 $ npm i
@@ -16,11 +16,10 @@ $ npm start
 $ npm stop
 ```
 
-### npm scripts
-
-- Use `npm run lint` to check code style.
-- Use `npm test` to run unit test.
-- Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
-
-
-[egg]: https://eggjs.org
+```
+前端开发 1
+后端开发 2
+服务器 3
+数据库 4
+移动开发 5
+```
