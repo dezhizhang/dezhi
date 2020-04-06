@@ -4,7 +4,10 @@ const Controller = require('egg').Controller;
 
 class LinuxController extends Controller {
   async index() {
-    await this.ctx.render('/default/linux')
+    let list = await this.ctx.model.Article.find({'classify':'3'});
+    await this.ctx.render('/default/linux',{
+      list
+    })
   }
 }
 
