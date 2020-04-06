@@ -43,6 +43,7 @@
                     <form method="POST" action="/admin/detail/doAdd">
                         <input type="hidden" name="article_id" value="<%=article_id%>"/>
 						<textarea id="summernote" name="content"></textarea>
+					
 						<button type="submit" class="btn btn-primary">
 							确 定
 						</button>
@@ -73,8 +74,18 @@
 <script type="text/javascript" src="/public/admin/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="/public/admin/js/custom.js" type="text/javascript"></script>
 
+
+
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
+
+<script src="https://cdn.bootcss.com/froala-editor/2.8.1/js/froala_editor.min.js"></script>
+<script src="https://cdn.bootcss.com/froala-editor/2.8.1/js/plugins/align.min.js"></script>
+<script src="https://cdn.bootcss.com/froala-editor/2.8.1/js/plugins/colors.min.js"></script>
+<script src="https://cdn.bootcss.com/froala-editor/2.8.1/js/plugins/font_size.min.js"></script>
+<script src="https://cdn.bootcss.com/froala-editor/2.8.1/js/plugins/char_counter.min.js"></script>
+<script src="https://cdn.bootcss.com/froala-editor/2.8.1/js/languages/zh_cn.js"></script>
 <script type="text/javascript">
+
 $(document).ready(function() {
     $('#summernote').summernote({
         lang : 'zh-CN',// 语言

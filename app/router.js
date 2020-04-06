@@ -47,11 +47,15 @@ module.exports = app => {
   router.get('/client',controller.default.client.index);
   //服务端
   router.get('/server',controller.default.server.index);
+  //数据库
+  
   //移动
   router.get('/mobile',controller.default.mobile.index);
   //关于
   router.get('/about',controller.default.about.index);
   router.get('/linux',controller.default.linux.index);
+
+  
   //详情
   router.get('/detail',controller.default.detail.index);
 };
