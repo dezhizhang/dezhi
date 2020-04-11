@@ -41,7 +41,8 @@
 										</div>
 									</div>
 									<div class="card-body">
-										<%- list[0].content%>
+										<!-- <%- list[0].content%> -->
+										<div id="#detail"></div>
 									</div>
 								</div>
 							</div>
@@ -64,5 +65,32 @@
 	<script type="text/javascript" src="/public/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script type="text/javascript" src="/public/admin/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/public/admin/js/custom.js" type="text/javascript"></script>
+	<script src="/public/admin/lib/marked.min.js"></script>
+	<script src="/public/admin/lib/prettify.min.js"></script>
+	<script src="/public/admin/lib/raphael.min.js"></script>
+	<script src="/public/admin/lib/underscore.min.js"></script>
+	<script src="/public/admin/lib/sequence-diagram.min.js"></script>
+	<script src="/public/admin/lib/flowchart.min.js"></script>
+	<script src="/public/admin/lib/jquery.flowchart.min.js"></script>
+	<script src="/public/admin/js/editormd.js"></script>
+	<script type="text/javascript">
+		$(function() {
+		  var markdown = $('#detail').text().trim()
+		  editormd.markdownToHTML('test-editormd-view', {
+			markdown: markdown, //+ "\r\n" + $("#append-test").text(),
+			htmlDecode: 'style,script,iframe', // you can filter tags decode
+			tocm: true, // Using [TOCM]
+			emoji: false,
+			taskList: true,
+			tex: true, // 默认不解析
+			flowChart: true, // 默认不解析
+			sequenceDiagram: true // 默认不解析
+		  })
+		  // 如果需要自定义代码高亮，可以使用 heighlightBlock.js
+		  $('code').each(function(i, block) {
+			hljs.highlightBlock(block)
+		  })
+		})
+	  </script>
 
 </html>
