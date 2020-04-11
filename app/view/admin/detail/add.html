@@ -77,19 +77,20 @@
 
 
 <script type="text/javascript">
+
  let testEditor = editormd('editormd', {
                 width: '100%',
-                height: 740,
+                height: 600,
                 path: '/public/admin/lib/', // 根据你的 editormd 实际目录位置修改
                 // markdown: md,
-                codeFold: true,
+                codeFold: false,
                 //syncScrolling : false,
                 saveHTMLToTextarea: true, // 保存 HTML 到 Textarea
                 searchReplace: true,
                 //watch : false,                // 关闭实时预览
                 htmlDecode: 'style,script,iframe|on*', // 开启 HTML 标签解析，为了安全性，默认不开启
-                toolbar  : true,             //关闭工具栏
-                //previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
+                toolbar  : false,             //关闭工具栏
+                previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
                 // emoji: true,
                 taskList: true,
                 tocm: true, // Using [TOCM]
