@@ -63,6 +63,17 @@ class DetailController extends BaseController {
             link:files.file
         }
     }
+    async upload(){
+        const { ctx } = this;
+        // 这里开始处理图片上传逻辑
+        // 省略上传逻辑代码
+        // 根据图片上传返回的结果，按 editormd 要求格式返回
+        ctx.body = {
+          success : 1, // 0表示上传失败; 1表示上传成功
+          message : "上传成功",
+          url     : filepathNew.split(this.config.baseDir+'\\app')[1] // 上传成功时才返回
+        }
+    }
 }
 
 module.exports = DetailController;
