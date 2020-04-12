@@ -62,7 +62,6 @@ module.exports = app => {
   router.get('/about',controller.default.about.index);
   router.get('/linux',controller.default.linux.index);
 
-  
   //详情
   router.get('/detail',controller.default.detail.index);
 };

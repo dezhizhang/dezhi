@@ -39,6 +39,15 @@ module.exports = appInfo => {
     }
   }
 
+  //配置线上地址
+  config.cluster = {
+      listen:{
+        path:"",
+        port:8086,
+        hostname:"0.0.0.0"
+    }
+  }
+
   //关闭csrf
   config.security = {
     csrf: {
