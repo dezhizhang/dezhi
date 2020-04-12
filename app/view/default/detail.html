@@ -7,8 +7,11 @@
       <h1 class="con_tilte"><%=title%></h1>
       <p class="bloginfo"><i class="avatar"><img src="/public/default/images/avatar.png"></i><span>晓智</span><span>2018-10-28</span><span>【<a href="/">程序人生</a>】</span><span>109990人已围观</span></p>
      
-      <div class="con_text">
-        <%- result.content%>
+      <div id="detail" style="display:none">
+        <%=content%>
+      </div>
+      <div id="editormd-view">
+        <%=content%>
       </div>
     </div>
   
@@ -107,4 +110,27 @@
 </article>
 <%include ./public/footer.html%>
 </body>
+<script src="/public/admin/lib/marked.min.js"></script>
+<script src="/public/admin/lib/prettify.min.js"></script>
+<script src="/public/admin/lib/raphael.min.js"></script>
+<script src="/public/admin/lib/underscore.min.js"></script>
+<script src="/public/admin/lib/sequence-diagram.min.js"></script>
+<script src="/public/admin/lib/flowchart.min.js"></script>
+<script src="/public/admin/lib/jquery.flowchart.min.js"></script>
+<script src="/public/admin/js/editormd.js"></script>
+<script type="text/javascript">
+		$(function() {
+		  let markdown = $('#detail').text().trim();
+		  editormd.markdownToHTML('editormd-view', {
+			markdown: markdown, //+ "\r\n" + $("#append-test").text(),
+			htmlDecode: 'style,script,iframe', // you can filter tags decode
+			tocm: true, // Using [TOCM]
+			emoji: false,
+			taskList: true,
+			tex: true, // 默认不解析
+			flowChart: true, // 默认不解析
+			sequenceDiagram: true // 默认不解析
+		  })
+		})
+</script>
 </html>
