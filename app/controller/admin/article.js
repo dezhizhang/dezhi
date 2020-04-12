@@ -2,9 +2,9 @@
 
 const fs=require('fs');
 const pump = require('mz-modules/pump');
-const Controller = require('egg').Controller;
+const BaseController = require('./base');
 
-class ArticleController extends Controller {
+class ArticleController extends BaseController {
     async index() {
         let list = await this.ctx.model.Article.find();
         await this.ctx.render('/admin/article/index',{
@@ -39,6 +39,10 @@ class ArticleController extends Controller {
             code:200,
             msg:"增加轮播图成功"
         }
+    }
+    async delete() {
+        let { id } = this.ctx.query;
+        await this.deleteOne(id,'Article');
     }
 }
 

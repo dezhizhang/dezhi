@@ -34,6 +34,7 @@ module.exports = app => {
   router.get('/admin/article',controller.admin.article.index);
   router.get('/admin/article/add',controller.admin.article.add);
   router.post('/admin/article/doAdd',controller.admin.article.doAdd);
+  router.get('/admin/article/delete',controller.admin.article.delete);
 
   //文章详情
   router.get('/admin/detail',controller.admin.detail.index);

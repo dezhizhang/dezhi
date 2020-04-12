@@ -54,18 +54,17 @@
 						</thead>
 						
 						<tbody>
-							
 							<%for(let i=0;i < list.length;i++) {%>
 								<tr>
 									<td><%=list[i].name%></td>
 									<td><%=list[i].classify%></td>
-									<td><img class="table-img" src="<%=list[i].img%>"/></td>
+									<td><img class="table-image" src="<%=list[i].img%>"/></td>
 									<td><%=list[i].description%></td>
 									<td><%=list[i].add_time%></td>
 									<td>
 										<a class="btn btn-info btn-color">修改</a>
 										<a href="/admin/detail?article_id=<%=list[i].id%>&name=<%=list[i].name%>" class="btn btn-info btn-color">增加详情</a>
-										<a class="btn btn-danger btn-color">删除</a>
+										<a href="/admin/article/delete?id=<%=list[i]._id%>" class="btn btn-danger btn-color">删除</a>
 									</td>
 								</tr>
 							<%}%>
