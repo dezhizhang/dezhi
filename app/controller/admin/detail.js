@@ -6,7 +6,7 @@ class DetailController extends BaseController {
     async index() {
         let { article_id,name } = this.ctx.query;
         let data = await this.ctx.model.Detail.find({"article_id":article_id});
-        console.log(data);
+       
         if(data.length > 0) {
             await this.ctx.render('/admin/detail/index',{
                 name,
@@ -22,8 +22,9 @@ class DetailController extends BaseController {
        
     }
     async add() {
-        let article_id = this.ctx.query.article_id;
+        let {article_id,name } = this.ctx.query;
         await this.ctx.render('/admin/detail/add',{
+            name,
             article_id
         });
     }

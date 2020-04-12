@@ -41,10 +41,6 @@
 										</div>
 									</div>
 									<div class="card-body">
-										<!-- <%- list[0].content%> -->
-										<!-- <div id="#detail">
-											<%=list[0].content%>
-										</div> -->
 										<table id="bs4-table" class="table table-bordered table-striped">
 											<thead>
 												<tr>
@@ -55,19 +51,20 @@
 												</tr>
 											</thead>
 											<tbody>
-												<%for(let i=0;i < list.length;i++) {%>
-													<tr>
-														<td><%=list[i].name%></td>
-														<td>
-															<div style="display: none;" id="detail"><%=list[i].content%></div>
-															<div id="editormd-view"></div>
-														</td>
-														
-														<td><%=list[i].add_time%></td>
-														<td>
-															<a href="/admin/detail/delete?id=<%=list[i]._id%>" class="btn btn-danger btn-color">删除</a>
-														</td>
-													</tr>
+												<%if(list.length >=1){%>
+													<%for(let i=0;i < list.length;i++) {%>
+														<tr>
+															<td><%=list[i].name%></td>
+															<td>
+																<div style="display: none;" id="detail"><%=list[i].content%></div>
+																<div id="editormd-view"></div>
+															</td>
+															<td><%=list[i].add_time%></td>
+															<td>
+																<a href="/admin/detail/delete?id=<%=list[i]._id%>" class="btn btn-danger btn-color">删除</a>
+															</td>
+														</tr>
+													<%}%>
 												<%}%>
 											</tbody>
 										</table>
