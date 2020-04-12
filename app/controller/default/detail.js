@@ -7,7 +7,6 @@ class HomeController extends Controller {
     let { article_id,name } = this.ctx.query;
     let list = await this.ctx.model.Detail.find({'article_id':article_id});
     await this.ctx.render('/default/detail',{
-      content:list[0].content,
       title:name,
       list:list
     })
