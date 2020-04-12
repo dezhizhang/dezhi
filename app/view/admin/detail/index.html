@@ -54,22 +54,18 @@
 													<th>操作</th>
 												</tr>
 											</thead>
-											
 											<tbody>
-												
 												<%for(let i=0;i < list.length;i++) {%>
 													<tr>
 														<td><%=list[i].name%></td>
-														
 														<td>
-															<div style="display: none;" id="detail"><%=list[i].content%></div>
+															<div style="display: none;" id="detail"><%=list[i]&&list[i].content%></div>
 															<div id="editormd-view"></div>
 														</td>
 														
 														<td><%=list[i].add_time%></td>
 														<td>
-											
-															<a class="btn btn-danger">删除</a>
+															<a href="/admin/detail/delete?id=<%=list[i]._id%>" class="btn btn-danger btn-color">删除</a>
 														</td>
 													</tr>
 												<%}%>

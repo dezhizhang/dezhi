@@ -4,19 +4,19 @@ const pump = require('mz-modules/pump');
 const BaseController = require('./base');
 class DetailController extends BaseController {
     async index() {
-        let article_id = this.ctx.query.article_id;
+        let { article_id,name } = this.ctx.query;
         let data = await this.ctx.model.Detail.find({"article_id":article_id});
-        // console.log(data);
-
+        console.log(data);
         if(data.length > 0) {
             await this.ctx.render('/admin/detail/index',{
+                name,
                 article_id,
                 list:data
             });
         } else {
             await this.ctx.render('/admin/detail/index',{
                 article_id,
-                list:[{content:""}]
+                list:[]
             });
         }
        
@@ -36,10 +36,7 @@ class DetailController extends BaseController {
             return
         }
         let detail =new this.ctx.model.Detail(data);
-        
         await detail.save();
-        console.log('1');
-
         await this.success(`/admin/detail?article_id=${article_id}`,'增加文章详情成功');
     }
     async upload() {
@@ -75,6 +72,12 @@ class DetailController extends BaseController {
           message : "上传成功",
           url     : filepathNew.split(this.config.baseDir+'\\app')[1] // 上传成功时才返回
         }
+    }
+    //删除数据
+    async delete(){
+        let { id } = this.ctx.query;
+        await this.deleteOne(id,'Detail');
+        // await this.success(`/admin/detail?article_id=${article_id}`,"删除成功");
     }
 }
 

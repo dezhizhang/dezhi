@@ -36,6 +36,7 @@ module.exports = app => {
   router.get('/admin/detail/add',controller.admin.detail.add);
   router.post('/admin/detail/doAdd',controller.admin.detail.doAdd);
   router.post('/admin/detail/upload',controller.admin.detail.upload);
+  router.get('/admin/detail/delete',controller.admin.detail.delete);
 
 
 
