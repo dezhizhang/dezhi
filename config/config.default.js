@@ -18,9 +18,12 @@ module.exports = appInfo => {
   //配置上传地址
   config.uploadDir = 'app/public/admin/upload'
 
-  // add your middleware config here
-  config.middleware = [];
+  //配置中间件
+  config.middleware = ['auth'];
 
+  config.auth = {
+    match:'/admin'
+  }
   //配置ejs
   exports.view = {
     mapping: {

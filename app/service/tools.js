@@ -13,8 +13,8 @@ class ToolsService extends Service {
         let captcha = svgCaptcha.create({
             size:params&&params.size || 4,
             fontSize:params&&params.fontSize || 50,
-            width:params&&params.width || 120,
-            height:params&&params.height || 30,
+            width:params&&params.width || 140,
+            height:params&&params.height || 38,
             background:params&&params.background || '#f60'
         });
         this.ctx.session.code = captcha.text;
