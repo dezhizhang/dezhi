@@ -2,8 +2,8 @@
 
 const fs=require('fs');
 const pump = require('mz-modules/pump');
-const Controller = require('egg').Controller;
-class FocusController extends Controller {
+const BaseController = require('./base');
+class FocusController extends BaseController {
     async index() {
         let list = await this.ctx.model.Focus.find();
         await this.ctx.render('/admin/focus/index',{
@@ -35,10 +35,11 @@ class FocusController extends Controller {
         }  
         let admin =new this.ctx.model.Focus(Object.assign(files,parts.field));
         await admin.save();
-        this.ctx.body = {
-            code:200,
-            msg:"增加轮播图成功"
-        }
+        await this.success('/admin/focus','增加轮播图成功');
+    }
+    async delete() {
+        let { id } = this.ctx.query;
+        await this.deleteOne(id,'Focus');
     }
 }
 

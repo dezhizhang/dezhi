@@ -27,6 +27,7 @@ module.exports = app => {
   router.get('/admin/focus',controller.admin.focus.index);
   router.get('/admin/focus/add',controller.admin.focus.add);
   router.post('/admin/focus/doAdd',controller.admin.focus.doAdd);
+  router.get('/admin/focus/delete',controller.admin.focus.delete);
   
 
   //文章管理
