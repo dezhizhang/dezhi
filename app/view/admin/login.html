@@ -37,15 +37,15 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form>
+                    <form method="POST" action="/admin/doLogin">
                         <h1 class="text-center">晓智博客</h1>
                         <div class="form-group">
                             <label>邮箱</label>
-                            <input type="email" class="form-control" placeholder="请输入邮箱">
+                            <input type="email" name="email" class="form-control" placeholder="请输入邮箱">
                         </div>
                         <div class="form-group">
                             <label>密码</label>
-                            <input type="password" class="form-control fa-twitter" placeholder="请输入密码">
+                            <input name="password" type="password" class="form-control fa-twitter" placeholder="请输入密码">
                         </div>
                         <div class="form-group" style="margin-bottom: 60px;">
                             <label>验证码</label>
