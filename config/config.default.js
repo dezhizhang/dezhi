@@ -65,3 +65,4 @@ module.exports = appInfo => {
     ...userConfig,
   };
 };
+
