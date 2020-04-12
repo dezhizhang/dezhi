@@ -36,7 +36,7 @@
             <span class="blogpic imgscale"><img src="<%=article[i].img%>" alt=""></span>
             <p class="blogtext"><%=article[i].description%> </p>
             <p class="bloginfo"><i class="avatar"><img src="/public/default/images/avatar.png"></i><span>晓智</span><span>2018-10-28</span><span></span></p>
-            <a href="/detail?name=<%=article[i].name%>&article_id=<%=article[i]._id%>" class="viewmore">阅读更多</a> 
+            <a href="/detail?article_id=<%=article[i]._id%>" class="viewmore">阅读更多</a> 
           </li>
         <%}%>
       </ul>
