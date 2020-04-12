@@ -36,7 +36,7 @@
 								<div class="card card-shadow mb-4">
 									<div class="card-header">
 										<div class="card-title">
-											管理员基本信息
+											基本信息
 										</div>
 									</div>
 									<div class="card-body">
@@ -59,12 +59,12 @@
 														<th scope="row"><%=(i + 1)%></th>
 														<td><%=list[i].username%></td>
 														<td><%=list[i].email%></td>
-														<td><img src="<%=list[i].photo%>"/></td>
+														<td><img class="table-image" src="<%=list[i].photo%>"/></td>
 														<td><%=list[i].add_time%></td>
 														<td><%=list[i].description%></td>
 														<td>
-															<a class="btn btn-info">修改</a>
-															<a class="btn btn-danger">删除</a>
+															<a class="btn btn-info btn-color">修改</a>
+															<a href="/admin/manager/delete?id=<%=list[i]._id%>" class="btn btn-danger btn-color">删除</a>
 														</td>
 													</tr>
 												<%}%>

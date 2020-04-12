@@ -20,7 +20,7 @@ class LoginController extends BaseController {
         }
 
     } else {
-        await this.error('/admin/login','验证码不正确');
+      await this.error('/admin/login','验证码不正确');
     }
   }
 }

@@ -2,9 +2,9 @@
 
 const fs=require('fs');
 const pump = require('mz-modules/pump');
-const Controller = require('egg').Controller;
+const BaseController = require('./base');
 
-class ManagerController extends Controller {
+class ManagerController extends BaseController {
     async index() {
         let list = await this.ctx.model.Admin.find();
         await this.ctx.render('/admin/manager/index',{
@@ -34,25 +34,20 @@ class ManagerController extends Controller {
             })
             
         }   
-
         let result = await this.ctx.model.Admin.find({'email':parts.field.email});
         if(result.length > 0) {
-            this.ctx.body = {
-                code:404,
-                msg:'管理员以存在',
-                data:null
-            }
+            await this.error('/admin/manager/add','管理员以存在');
             return
         }
 
         parts.field.password = await this.service.tools.md5(parts.field.password);
         let admin =new this.ctx.model.Admin(Object.assign(files,parts.field));
         await admin.save();
-        this.ctx.body = {
-            code:200,
-            msg:"增加管理员成功"
-        }
-        // await this.success('/admin/focus','增加轮播图成功');
+        await this.success('/admin/manager','增加管理员成功');
+    }
+    async delete() {
+        let { id } = this.ctx.query;
+        await this.deleteOne(id,'Admin');
     }
 }
 
