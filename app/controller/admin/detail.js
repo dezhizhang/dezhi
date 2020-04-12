@@ -16,7 +16,8 @@ class DetailController extends BaseController {
         } else {
             await this.ctx.render('/admin/detail/index',{
                 article_id,
-                list:[]
+                list:[],
+                name
             });
         }
        

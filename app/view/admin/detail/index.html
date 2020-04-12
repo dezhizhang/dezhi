@@ -36,7 +36,7 @@
 								<div class="card card-shadow mb-4">
 									<div class="card-header">
 										<div class="card-title">
-                                            <a href="/admin/detail/add?article_id=<%=article_id%>" class="btn btn-info">增加详情</a>
+                                            <a href="/admin/detail/add?article_id=<%=article_id%>&name=<%=name%>" class="btn btn-info">增加详情</a>
 											
 										</div>
 									</div>
@@ -51,7 +51,7 @@
 												</tr>
 											</thead>
 											<tbody>
-												<%if(list.length >=1){%>
+												<%if(list.length > 0){%>
 													<%for(let i=0;i < list.length;i++) {%>
 														<tr>
 															<td><%=list[i].name%></td>
