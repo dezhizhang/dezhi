@@ -54,6 +54,7 @@ module.exports = app => {
   //服务端
   router.get('/server',controller.default.server.index);
   //数据库
+  router.get('/data',controller.default.data.index);
   
   //移动
   router.get('/mobile',controller.default.mobile.index);
