@@ -6,7 +6,12 @@ const BaseController = require('./base');
 
 class ArticleController extends BaseController {
     async index() {
-        let list = await this.ctx.model.Article.find();
+        const pageSize = 10;
+        let page = this.ctx.query.page || 1;
+        console.log(page);
+        // let queryResult = collection.find(queryCondition).limit(pageSize).skip((page - 1) * pageSize).sort({'_id': -1});
+        let list = await this.ctx.model.Article.find().limit(pageSize).skip((page - 1) * pageSize).sort({'add_time':-1});
+        console.log(list);
         await this.ctx.render('/admin/article/index',{
             list
         });
