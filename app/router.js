@@ -44,7 +44,9 @@ module.exports = app => {
   router.get('/admin/detail/delete',controller.admin.detail.delete);
 
   //友情管理
+  router.get('/admin/friendship',controller.admin.friendship.index);
   router.get('/admin/friendship/add',controller.admin.friendship.add);
+  router.post('/admin/friendship/doAdd',controller.admin.friendship.doAdd);
 
 
 
