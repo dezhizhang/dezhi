@@ -42,18 +42,11 @@
       </ul>
       <!--pagelist-->
       <div class="pagelist">
-         <a title="Total record">&nbsp;<b>67</b> </a>
-         &nbsp;&nbsp;&nbsp;<a href="/?page=1">1</a>&nbsp;
-         <a href="/?page=2">2</a>
-         &nbsp;<a href="/?page=3">3</a>&nbsp;
-         &nbsp;&nbsp;&nbsp;<a href="/?page=4">4</a>
-         &nbsp;<a href="/?page=5">5</a>&nbsp;
-         &nbsp;&nbsp;&nbsp;<a href="/?page=6">6</a>
-         &nbsp;<a href="/?page=6">6</a>&nbsp;
-         &nbsp;<a href="/?page=7">7</a>
-         &nbsp;<a href="/?page=8">8</a>
-         <a href="/?page=9">下一页</a>&nbsp;
-         <a href="/?page=10">尾页</a>
+         <a title="Total record" href="/?page=1">&nbsp;<b>首页</b> </a>
+         <%for(let i=0;i < Math.ceil(count/ 10);i++){%>
+          <a href="/?page=<%=(i+1)%>"><%=(i+1)%></a>
+         <%}%>
+         <a href="/?page=<%= (Math.ceil(count/ 10) + 1)%>">尾页</a>
       </div>
        <!--pagelist end--> 
     </div>
