@@ -27,7 +27,8 @@ class FriendshipController extends BaseController {
     }
     async delete() {
         let { id } = this.ctx.query;
-        await this.deleteOne(id,'Article');
+        await this.deleteOne(id,'Friendship');
+        await this.success('/admin/friendship','删除成功');
     }
 }
 

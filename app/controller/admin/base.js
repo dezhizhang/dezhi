@@ -28,6 +28,7 @@ class BaseController extends Controller {
         await this.ctx.model[model].deleteOne({'_id':id});
         //返回上一页
         this.ctx.redirect(this.ctx.state.prevPage);
+        this.success(this.ctx.state.prevPage,'删除成功');
     }
     //改变状态的方法
     async changeStatus() {

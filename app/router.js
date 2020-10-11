@@ -47,6 +47,7 @@ module.exports = app => {
   router.get('/admin/friendship',controller.admin.friendship.index);
   router.get('/admin/friendship/add',controller.admin.friendship.add);
   router.post('/admin/friendship/doAdd',controller.admin.friendship.doAdd);
+  router.get('/admin/friendship/delete',controller.admin.friendship.delete);
 
 
 
