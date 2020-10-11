@@ -52,7 +52,6 @@
 								<th>操作</th>
 							</tr>
 						</thead>
-						
 						<tbody>
 							<%for(let i=0;i < list.length;i++) {%>
 								<tr>
@@ -70,6 +69,17 @@
 							<%}%>
 						</tbody>
 					</table>
+					<tfoot>
+						<nav aria-label="Page navigation example" class="pull-right">
+							<ul class="pagination">
+								<li class="page-item"><a class="page-link" href="/admin/article?page=1">首页</a></li>
+								<%for(let i=0;i < Math.ceil(count / 10);i++){%>
+									<li class="page-item"><a class="page-link" href="/admin/article?page=<%=(i+1)%>"><%=(i + 1)%></a></li>
+								<%}%>
+							  	<li class="page-item"><a class="page-link" href="/admin/article?page=<%=Math.floor((count / 10)+1)%>">尾页</a></li>
+							</ul>
+						  </nav>
+					</tfoot>
 				</div>
 			</div>
 		</div>
@@ -86,8 +96,7 @@
 <%include ../public/footer.html%>
 <!-- Footer_End -->
 </div>
-		
-    </body>
+</body>
 <script type="text/javascript" src="/public/admin/js/jquery.min.js"></script>
 <script type="text/javascript" src="/public/admin/js/popper.min.js"></script>
 <script type="text/javascript" src="/public/admin/js/bootstrap.min.js"></script>

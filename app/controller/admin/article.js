@@ -8,12 +8,13 @@ class ArticleController extends BaseController {
     async index() {
         const pageSize = 10;
         let page = this.ctx.query.page || 1;
-        console.log(page);
-        // let queryResult = collection.find(queryCondition).limit(pageSize).skip((page - 1) * pageSize).sort({'_id': -1});
+        let count = await this.ctx.model.Article.find().count();
+       
         let list = await this.ctx.model.Article.find().limit(pageSize).skip((page - 1) * pageSize).sort({'add_time':-1});
-        console.log(list);
+      
         await this.ctx.render('/admin/article/index',{
-            list
+            list,
+            count
         });
     }
     async add() {
