@@ -41,10 +41,7 @@ class ArticleController extends BaseController {
         }  
         let article =new this.ctx.model.Article(Object.assign(files,parts.field));
         await article.save();
-        this.ctx.body = {
-            code:200,
-            msg:"增加轮播图成功"
-        }
+        await this.success('/admin/article','增加文章成功')
     }
     async delete() {
         let { id } = this.ctx.query;
