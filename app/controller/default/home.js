@@ -8,6 +8,7 @@ class HomeController extends Controller {
         let pageSize = 10;
         let focus = await this.ctx.model.Focus.find();
         let count = await this.ctx.model.Article.count();
+        this.ctx.state.friendship = await this.ctx.model.Friendship.find();
         let article = await this.ctx.model.Article.find().limit(pageSize).skip((page - 1) * pageSize).sort({'add_time':1}); 
         await this.ctx.render("/default/index",{
             focus,

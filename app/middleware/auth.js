@@ -4,6 +4,7 @@ module.exports = (opt,app) => {
     return async function auth(ctx,next) {
         //配置安全验证
         ctx.state.csrf = ctx.csrf;
+        ctx.state.friendship = ctx.friendship;
         ctx.state.userInfo = ctx.session.userInfo;
         //上一页地址
         ctx.state.prevPage = ctx.request.headers['referer'];

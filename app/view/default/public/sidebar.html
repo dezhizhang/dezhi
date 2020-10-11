@@ -55,9 +55,14 @@
     </div>
     -->
     <div class="links whitebg">
-        <h2 class="htitle"><span class="sqlink"><a href="/">申请链接</a></span>友情链接</h2>
-        <ul>
-          <li><a href="http://www.xiaozhi.shop/" target="_blank">晓智杂货店</a></li>
-        </ul>
+      <h2 class="htitle"><span class="sqlink"><a href="/">申请链接</a></span>友情链接</h2>
+      <ul>
+        <%for(let i=0;i < friendship.length;i++){%>
+          <li><a href="<%=friendship[i].link%>" target="_blank"><%=friendship[i].name%></a></li>
+        <%}%>
+      </ul>
+     
+       
+       
     </div>
 </div>
