@@ -37,25 +37,23 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form method="POST" action="/admin/doLogin">
-                        <h1 class="text-center">晓智博客</h1>
+                    <form method="POST" action="/apply/doApply">
+                        
                         <div class="form-group">
-                            <label>邮箱</label>
-                            <input type="email" name="email" class="form-control" placeholder="请输入邮箱">
+                            <label>名称</label>
+                            <input  name="name" required class="form-control" placeholder="请输入邮箱">
                         </div>
                         <div class="form-group">
-                            <label>密码</label>
-                            <input name="password" type="password" class="form-control fa-twitter" placeholder="请输入密码">
+                            <label>链接</label>
+                            <input name="password" type="link" class="form-control fa-twitter" placeholder="请输入密码">
                         </div>
-                        <div class="form-group" style="margin-bottom: 60px;">
-                            <label>验证码</label>
-                            <div style="display: flex;">
-                                <input name="code" style="flex: 1; max-width: 300;" type="text" class="form-control fa-twitter" placeholder="请输入验证码">
-                                <img id="verify_img" src="/admin/verify" title="看不清？点击刷新" onclick="javascript:this.src='/admin/verify?mt='+Math.random()">
-                            </div>
-                        </div>
+                        <div class="form-group">
+							<label for="exampleFormControlTextarea1">描述</label>
+							<textarea name="description" class="form-control"  rows="3"></textarea>
+						</div>
+                       
                         <div style="margin-bottom: 20px;">
-                            <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">注  册</button> 
+                            <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">申  请</button> 
                         </div>
                        
                     </form>

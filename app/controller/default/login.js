@@ -17,13 +17,12 @@ class HomeController extends BaseController {
       return;
     }
     login.password = await this.ctx.service.tools.md5(password);
-    let user = await this.ctx.model.User.find({'email':email,'password':login.password});
-    console.log('user',user);
-    if(user.length <= 0) {
+    let userInfo = await this.ctx.model.User.find({'email':email,'password':login.password});
+    if(userInfo.length <= 0) {
       await this.error('/login','用户名或密码不正确');
       return;
     }
-    this.ctx.userInfo = user[0];
+    this.ctx.session.userInfo = userInfo[0];
     await this.success('/','登录成功')
   }
 }

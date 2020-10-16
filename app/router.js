@@ -78,4 +78,7 @@ module.exports = app => {
   router.get('/register',controller.default.register.index);
   //注册提交
   router.post('/doRegister',controller.default.register.doRegister);
+  //申请友情
+  router.get('/apply',controller.default.apply.index);
+  router.post('/apply/doApply',controller.default.apply.doApply);
 };
