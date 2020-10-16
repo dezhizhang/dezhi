@@ -70,4 +70,6 @@ module.exports = app => {
 
   //详情
   router.get('/detail',controller.default.detail.index);
+  //登录
+  router.get('/login',controller.default.login.index);
 };
