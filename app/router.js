@@ -72,4 +72,8 @@ module.exports = app => {
   router.get('/detail',controller.default.detail.index);
   //登录
   router.get('/login',controller.default.login.index);
+  //注册
+  router.get('/register',controller.default.register.index);
+  //注册提交
+  router.post('/doRegister',controller.default.register.doRegister);
 };

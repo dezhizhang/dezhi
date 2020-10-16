@@ -37,27 +37,30 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form method="POST" action="/doLogin">
+                    <form method="POST" action="/doRegister">
                         <h1 class="text-center">晓智博客</h1>
                         <div class="form-group">
+                            <label>用户名</label>
+                            <input  name="username" required class="form-control" placeholder="请输入用户名">
+                        </div>
+                        <div class="form-group">
                             <label>邮箱</label>
-                            <input type="email" name="email" class="form-control" placeholder="请输入邮箱">
+                            <input type="email" name="email" required class="form-control" placeholder="请输入邮箱">
                         </div>
                         <div class="form-group">
                             <label>密码</label>
-                            <input name="password" type="password" class="form-control fa-twitter" placeholder="请输入密码">
+                            <input name="password" required type="password" class="form-control fa-twitter" placeholder="请输入密码">
                         </div>
                         <div class="form-group" style="margin-bottom: 60px;">
                             <label>验证码</label>
                             <div style="display: flex;">
-                                <input name="code" style="flex: 1; max-width: 300;" type="text" class="form-control fa-twitter" placeholder="请输入验证码">
+                                <input required name="code" style="flex: 1; max-width: 300;" type="text" class="form-control fa-twitter" placeholder="请输入验证码">
                                 <img id="verify_img" src="/admin/verify" title="看不清？点击刷新" onclick="javascript:this.src='/admin/verify?mt='+Math.random()">
                             </div>
                         </div>
                         <div style="margin-bottom: 20px;">
-                            <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">登  录</button> 
+                            <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">注  册</button> 
                         </div>
-                       
                     </form>
                 </div>
             </div>
