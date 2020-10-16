@@ -22,7 +22,7 @@ module.exports = appInfo => {
   config.middleware = ['auth'];
 
   config.auth = {
-    match:'/admin'
+    match:['/admin','/login','/']
   }
   //配置ejs
   exports.view = {

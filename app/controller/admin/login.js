@@ -12,7 +12,7 @@ class LoginController extends BaseController {
         let result = await this.ctx.model.Admin.find({'emial':emial,'password':password});
         if(result.length > 0) {
             //保存用户信息
-            this.ctx.session.userInfo = result[0];
+            this.ctx.session.adminInfo = result[0];
             //跳转到用户中心
             this.ctx.redirect('/admin/manager'); 
         } else {
