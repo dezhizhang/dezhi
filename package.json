@@ -7,16 +7,19 @@
     "declarations": true
   },
   "dependencies": {
-    "dayjs": "^1.8.26",
+    "ali-oss": "^6.12.0",
+    "dayjs": "^1.9.8",
     "egg": "^2.15.1",
     "egg-mongoose": "^3.2.0",
     "egg-scripts": "^2.11.0",
     "egg-view-ejs": "^2.0.1",
+    "fs-extra": "^9.0.1",
     "jimp": "^0.10.0",
     "md5": "^2.2.1",
     "mz-modules": "^2.1.0",
     "path": "^0.12.7",
     "silly-datetime": "^0.1.2",
+    "stream-wormhole": "^1.1.0",
     "svg-captcha": "^1.4.0"
   },
   "devDependencies": {
